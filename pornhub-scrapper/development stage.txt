@@ -1,0 +1,2 @@
+-learn promise, async, await			-done
+-making the script download one by one	-done

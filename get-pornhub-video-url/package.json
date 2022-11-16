@@ -1,0 +1,47 @@
+{
+  "_from": "get-pornhub-video-url",
+  "_id": "get-pornhub-video-url@1.0.2",
+  "_inBundle": false,
+  "_integrity": "sha512-ToTImy+qupph8Ke+90TfL1P0g7Wm7r+UlFOsobwyiqYd4m1kcJ1xTJEWAK6WkR2YitCvsk+KMDoBeeG6TmLoWQ==",
+  "_location": "/get-pornhub-video-url",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "get-pornhub-video-url",
+    "name": "get-pornhub-video-url",
+    "escapedName": "get-pornhub-video-url",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER"
+  ],
+  "_resolved": "https://registry.npmjs.org/get-pornhub-video-url/-/get-pornhub-video-url-1.0.2.tgz",
+  "_shasum": "30e07dd84e1afe59cd452196d037336f53b6ad86",
+  "_spec": "get-pornhub-video-url",
+  "_where": "C:\\Users\\user",
+  "author": "",
+  "bugs": {
+    "url": "https://github.com/lecepin/get-pornhub-download-url/issues"
+  },
+  "bundleDependencies": false,
+  "deprecated": false,
+  "description": "获取 P 站视频下载地址的浏览器端脚本。",
+  "homepage": "https://github.com/lecepin/get-pornhub-download-url#readme",
+  "keywords": [
+    "pornhub"
+  ],
+  "license": "ISC",
+  "main": "index.js",
+  "name": "get-pornhub-video-url",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lecepin/get-pornhub-download-url.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "1.0.2"
+}
