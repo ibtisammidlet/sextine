@@ -1,0 +1,1 @@
+ipfs-core is doing the job iving the same cid of ipfs disctop but it upload the file which the other don't.

@@ -1,0 +1,1 @@
+shorts: https://docs.pixelfed.org/running-pixelfed/installation/

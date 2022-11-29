@@ -1,0 +1,6 @@
+{
+  "name": "ipfs-core",
+  "version": "0.14.2",
+  "description": "JavaScript implementation of the IPFS specification",
+  "type": "module"
+}
