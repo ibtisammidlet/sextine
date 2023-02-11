@@ -1,0 +1,163 @@
+
+<div id="hero">
+  <div id="output">
+    <div id="progressBar"></div>
+  </div>
+  <div id="status">
+    <div>
+      <span class="show-leech">Downloading </span>
+      <span class="show-seed">Seeding </span>
+      <code>
+        <a id="torrentLink" href="https://bafybeidpmrlka2nz5e7dj7tisaaupeplww36qqhwa2gnc3kgwwhmj4uwm4.ipfs.nftstorage.link/?filename=files.torrent">files.torrent</a>
+      </code>
+      <span class="show-leech"> from </span>
+      <span class="show-seed"> to </span>
+      <code id="numPeers">0 peers</code>. 
+    </div>
+    <div>
+      <code id="downloaded"></code>
+      of <code id="total"></code>
+      — <span id="remaining"></span><br/>
+      &#x2198;<code id="downloadSpeed">0 b/s</code>
+      / &#x2197;<code id="uploadSpeed">0 b/s</code>
+    </div>
+  </div>
+</div>
+
+
+
+<script src="https://momentjs.com/downloads/moment.min.js"></script>
+<script src="https://cdn.jsdelivr.net/webtorrent/latest/webtorrent.min.js"></script>
+
+<script>var torrentId = 'https://bafybeidpmrlka2nz5e7dj7tisaaupeplww36qqhwa2gnc3kgwwhmj4uwm4.ipfs.nftstorage.link/?filename=files.torrent'
+
+var client = new WebTorrent()
+
+// HTML elements
+var $body = document.body
+var $progressBar = document.querySelector('#progressBar')
+var $numPeers = document.querySelector('#numPeers')
+var $downloaded = document.querySelector('#downloaded')
+var $total = document.querySelector('#total')
+var $remaining = document.querySelector('#remaining')
+var $uploadSpeed = document.querySelector('#uploadSpeed')
+var $downloadSpeed = document.querySelector('#downloadSpeed')
+
+// Download the torrent
+client.add(torrentId, function (torrent) {
+
+  // Stream the file in the browser
+  torrent.files[0].appendTo('#output')
+
+  // Trigger statistics refresh
+  torrent.on('done', onDone)
+  setInterval(onProgress, 500)
+  onProgress()
+  
+  // Statistics
+  function onProgress () {
+    // Peers
+    $numPeers.innerHTML = torrent.numPeers + (torrent.numPeers === 1 ? ' peer' : ' peers')
+
+    // Progress
+    var percent = Math.round(torrent.progress * 100 * 100) / 100
+    $progressBar.style.width = percent + '%'
+    $downloaded.innerHTML = prettyBytes(torrent.downloaded)
+    $total.innerHTML = prettyBytes(torrent.length)
+
+    // Remaining time
+    var remaining
+    if (torrent.done) {
+      remaining = 'Done.'
+    } else {
+      remaining = moment.duration(torrent.timeRemaining / 1000, 'seconds').humanize()
+      remaining = remaining[0].toUpperCase() + remaining.substring(1) + ' remaining.'
+    }
+    $remaining.innerHTML = remaining
+    
+    // Speed rates
+    $downloadSpeed.innerHTML = prettyBytes(torrent.downloadSpeed) + '/s'
+    $uploadSpeed.innerHTML = prettyBytes(torrent.uploadSpeed) + '/s'
+  }
+  function onDone () {
+    $body.className += ' is-seed'
+    onProgress()
+  }
+})
+
+// Human readable bytes util
+function prettyBytes(num) {
+	var exponent, unit, neg = num < 0, units = ['B', 'kB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB']
+	if (neg) num = -num
+	if (num < 1) return (neg ? '-' : '') + num + ' B'
+	exponent = Math.min(Math.floor(Math.log(num) / Math.log(1000)), units.length - 1)
+	num = Number((num / Math.pow(1000, exponent)).toFixed(2))
+	unit = units[exponent]
+	return (neg ? '-' : '') + num + ' ' + unit
+}
+</script>
+<style>
+	#output video {
+  width: 100%;
+}
+#progressBar {
+    height: 5px;
+    width: 0%;
+    background-color: #35b44f;
+    transition: width .4s ease-in-out;
+}
+body.is-seed .show-seed {
+    display: inline;
+}
+body.is-seed .show-leech {
+    display: none;
+}
+.show-seed {
+    display: none;
+}
+#status code {
+    font-size: 90%;
+    font-weight: 700;
+    margin-left: 3px;
+    margin-right: 3px;
+    border-bottom: 1px dashed rgba(255,255,255,0.3);
+}
+
+.is-seed #hero {
+    background-color: #154820;
+    transition: .5s .5s background-color ease-in-out;
+}
+#hero {
+    background-color: #2a3749;
+}
+#status {
+    color: #fff;
+    font-size: 17px;
+    padding: 5px;
+}
+a:link, a:visited {
+    color: #30a247;
+    text-decoration: none;
+}
+</style>
+
+<!--
+<script>
+	const WebTorrent = require('webtorrent')
+
+const client = new WebTorrent()
+const magnetURI = 'magnet:?xt=urn:btih:228d539252a88a1c8ad1b774888d7fb19506e223&dn=files&tr=udp%3a%2f%2ftracker.opentrackr.org%3a1337%2fannounce&tr=https%3a%2f%2fopen.kickasstracker.com%3a443%2fannounce&tr=udp%3a%2f%2ftracker.coppersurfer.tk%3a6969%2fannounce&tr=udp%3a%2f%2fopen.stealth.si%3a80%2fannounce&tr=http%3a%2f%2f87.253.152.137%2fannounce&tr=http%3a%2f%2f91.216.110.47%2fannounce&tr=http%3a%2f%2f91.217.91.21%3a3218%2fannounce&tr=http%3a%2f%2f91.218.230.81%3a6969%2fannounce&tr=http%3a%2f%2f93.92.64.5%2fannounce&tr=http%3a%2f%2fatrack.pow7.com%2fannounce&tr=http%3a%2f%2fbt.henbt.com%3a2710%2fannounce&tr=http%3a%2f%2fbt.pusacg.org%3a8080%2fannounce&tr=https%3a%2f%2ftracker.bt-hash.com%3a443%2fannounce&tr=udp%3a%2f%2ftracker.leechers-paradise.org%3a6969&tr=https%3a%2f%2f182.176.139.129%3a6969%2fannounce&tr=udp%3a%2f%2fzephir.monocul.us%3a6969%2fannounce&tr=https%3a%2f%2ftracker.dutchtracking.com%3a80%2fannounce&tr=https%3a%2f%2fgrifon.info%3a80%2fannounce&tr=udp%3a%2f%2ftracker.kicks-ass.net%3a80%2fannounce&tr=udp%3a%2f%2fp4p.arenabg.com%3a1337%2fannounce&tr=udp%3a%2f%2ftracker.aletorrenty.pl%3a2710%2fannounce&tr=udp%3a%2f%2ftracker.internetwarriors.net%3a1337%2fannounce&tr=https%3a%2f%2ftracker.parrotsec.org%3a443%2fannounce&tr=https%3a%2f%2ftracker.moxing.party%3a6969%2fannounce&tr=https%3a%2f%2ftracker.ipv6tracker.ru%3a80%2fannounce&tr=https%3a%2f%2ftracker.fastdownload.xyz%3a443%2fannounce&tr=https%3a%2f%2fgwp2-v19.rinet.ru%3a80%2fannounce&tr=https%3a%2f%2ftr.kxmp.cf%3a80%2fannounce&tr=udp%3a%2f%2fexplodie.org%3a6969%2fannounce&tr=http%3a%2f%2ftracker.opentrackr.org%3a1337%2fannounce&tr=http%3a%2f%2ftracker.internetwarriors.net%3a1337%2fannounce&tr=udp%3a%2f%2fexodus.desync.com%3a6969%2fannounce&tr=udp%3a%2f%2ftracker.openbittorrent.com%3a6969%2fannounce&tr=udp%3a%2f%2fretracker.lanta-net.ru%3a2710%2fannounce&tr=udp%3a%2f%2fwww.torrent.eu.org%3a451%2fannounce&tr=udp%3a%2f%2ftracker.torrent.eu.org%3a451%2fannounce&tr=udp%3a%2f%2ftracker.tiny-vps.com%3a6969%2fannounce&tr=udp%3a%2f%2fwassermann.online%3a6969%2fannounce&tr=udp%3a%2f%2fvibe.community%3a6969%2fannounce&tr=udp%3a%2f%2fvalakas.rollo.dnsabr.com%3a2710%2fannounce&tr=udp%3a%2f%2fu.wwwww.wtf%3a1%2fannounce&tr=udp%3a%2f%2ftracker0.ufibox.com%3a6969%2fannounce&tr=udp%3a%2f%2ftracker.zerobytes.xyz%3a1337%2fannounce&tr=udp%3a%2f%2ftracker.uw0.xyz%3a6969%2fannounce&tr=udp%3a%2f%2ftracker.shkinev.me%3a6969%2fannounce&tr=udp%3a%2f%2ftracker.moeking.me%3a6969%2fannounce&tr=udp%3a%2f%2ftracker.lelux.fi%3a6969%2fannounce&tr=udp%3a%2f%2ftracker.blacksparrowmedia.net%3a6969%2fannounce&tr=udp%3a%2f%2ftracker.army%3a6969%2fannounce&tr=udp%3a%2f%2fretracker.netbynet.ru%3a2710%2fannounce&tr=udp%3a%2f%2fopentracker.i2p.rocks%3a6969%2fannounce&tr=udp%3a%2f%2fopentor.org%3a2710%2fannounce&tr=udp%3a%2f%2fmts.tvbit.co%3a6969%2fannounce&tr=udp%3a%2f%2fmovies.zsw.ca%3a6969%2fannounce&tr=udp%3a%2f%2fmail.realliferpg.de%3a6969%2fannounce&tr=udp%3a%2f%2fipv4.tracker.harry.lu%3a80%2fannounce&tr=https%3a%2f%2fexplodie.org%3a6969%2fannounce&tr=udp%3a%2f%2fengplus.ru%3a6969%2fannounce&tr=udp%3a%2f%2fedu.uifr.ru%3a6969%2fannounce&tr=udp%3a%2f%2fdrumkitx.com%3a6969%2fannounce&tr=udp%3a%2f%2fdiscord.heihachi.pw%3a6969%2fannounce&tr=udp%3a%2f%2fcutiegirl.ru%3a6969%2fannounce&tr=udp%3a%2f%2fbubu.mapfactor.com%3a6969%2fannounce&tr=udp%3a%2f%2fbt2.archive.org%3a6969%2fannounce&tr=udp%3a%2f%2fbt1.archive.org%3a6969%2fannounce&tr=udp%3a%2f%2fadmin.videoenpoche.info%3a6969%2fannounce&tr=https%3a%2f%2fw.wwwww.wtf%3a443%2fannounce&tr=https%3a%2f%2ftrakx.herokuapp.com%3a443%2fannounce&tr=https%3a%2f%2ftracker.sloppyta.co%3a443%2fannounce&tr=https%3a%2f%2ftracker.nanoha.org%3a443%2fannounce&tr=https%3a%2f%2ftracker.lelux.fi%3a443%2fannounce&tr=http%3a%2f%2fvps02.net.orel.ru%3a80%2fannounce&tr=http%3a%2f%2fvpn.flying-datacenter.de%3a6969%2fannounce&tr=http%3a%2f%2ftracker.zerobytes.xyz%3a1337%2fannounce&tr=http%3a%2f%2ftracker.sloppyta.co%3a80%2fannounce&tr=http%3a%2f%2ftracker.noobsubs.net%3a80%2fannounce&tr=http%3a%2f%2ftracker.lelux.fi%3a80%2fannounce&tr=http%3a%2f%2ftracker.gbitt.info%3a80%2fannounce&tr=http%3a%2f%2ftracker-cdn.moeking.me%3a2095%2fannounce&tr=http%3a%2f%2ftorrenttracker.nwc.acsalaska.net%3a6969%2fannounce&tr=http%3a%2f%2ft.overflow.biz%3a6969%2fannounce&tr=http%3a%2f%2frt.tace.ru%3a80%2fannounce&tr=http%3a%2f%2fopentracker.i2p.rocks%3a6969%2fannounce&tr=http%3a%2f%2fns3107607.ip-54-36-126.eu%3a6969%2fannounce&tr=http%3a%2f%2fh4.trakx.nibba.trade%3a80%2fannounce&tr=http%3a%2f%2fexplodie.org%3a6969%2fannounce&tr=udp%3a%2f%2fudp-tracker.shittyurl.org%3a6969%2fannounce&tr=udp%3a%2f%2ftracker4.itzmx.com%3a2710%2fannounce&tr=udp%3a%2f%2ftracker2.dler.org%3a80%2fannounce&tr=udp%3a%2f%2ftracker1.bt.moack.co.kr%3a80%2fannounce&tr=udp%3a%2f%2ftracker.theoks.net%3a6969%2fannounce&tr=udp%3a%2f%2ftracker.swateam.org.uk%3a2710%2fannounce&tr=udp%3a%2f%2ftracker.ololosh.space%3a6969%2fannounce&tr=udp%3a%2f%2ftracker.nrx.me%3a6969%2fannounce&tr=udp%3a%2f%2ftracker.monitorit4.me%3a6969%2fannounce&tr=udp%3a%2f%2ftracker.loadbt.com%3a6969%2fannounce&tr=udp%3a%2f%2ftracker.kali.org%3a6969%2fannounce&tr=udp%3a%2f%2ftracker.filemail.com%3a6969%2fannounce&tr=udp%3a%2f%2ftracker.dler.org%3a6969%2fannounce&tr=udp%3a%2f%2ftracker.ccp.ovh%3a6969%2fannounce&tr=udp%3a%2f%2ftracker.breizh.pm%3a6969%2fannounce&tr=udp%3a%2f%2ftracker.altrosky.nl%3a6969%2fannounce&tr=udp%3a%2f%2ftracker.0x.tf%3a6969%2fannounce&tr=udp%3a%2f%2ftracker-de.ololosh.space%3a6969%2fannounce&tr=udp%3a%2f%2ftr2.ysagin.top%3a2710%2fannounce&tr=udp%3a%2f%2ftr.cili001.com%3a8070%2fannounce&tr=udp%3a%2f%2ftr.bangumi.moe%3a6969%2fannounce&tr=udp%3a%2f%2ftorrentclub.online%3a54123%2fannounce&tr=udp%3a%2f%2ft3.leech.ie%3a1337%2fannounce&tr=udp%3a%2f%2ft2.leech.ie%3a1337%2fannounce&tr=udp%3a%2f%2ft1.leech.ie%3a1337%2fannounce&tr=udp%3a%2f%2fretracker.sevstar.net%3a2710%2fannounce&tr=udp%3a%2f%2fpublic.tracker.vraphim.com%3a6969%2fannounce&tr=udp%3a%2f%2fpublic.publictracker.xyz%3a6969%2fannounce&tr=udp%3a%2f%2fpublic-tracker.zooki.xyz%3a6969%2fannounce&tr=udp%3a%2f%2fopen.publictracker.xyz%3a6969%2fannounce&tr=udp%3a%2f%2fnewtoncity.org%3a6969%2fannounce&tr=udp%3a%2f%2finferno.demonoid.is%3a3391%2fannounce&tr=udp%3a%2f%2ffree.publictracker.xyz%3a6969%2fannounce&tr=udp%3a%2f%2ffe.dealclub.de%3a6969%2fannounce&tr=udp%3a%2f%2fconcen.org%3a6969%2fannounce&tr=udp%3a%2f%2fcode2chicken.nl%3a6969%2fannounce&tr=udp%3a%2f%2fcamera.lei001.com%3a6969%2fannounce&tr=udp%3a%2f%2fbt2.54new.com%3a8080%2fannounce&tr=udp%3a%2f%2fbt.firebit.org%3a2710%2fannounce&tr=udp%3a%2f%2fbclearning.top%3a6969%2fannounce&tr=udp%3a%2f%2fapp.icon256.com%3a8000%2fannounce&tr=udp%3a%2f%2fanidex.moe%3a6969%2fannounce&tr=https%3a%2f%2ftracker.tamersunion.org%3a443%2fannounce&tr=https%3a%2f%2ftracker.nitrix.me%3a443%2fannounce&tr=https%3a%2f%2ftracker.foreverpirates.co%3a443%2fannounce&tr=https%3a%2f%2ftracker.coalition.space%3a443%2fannounce&tr=http%3a%2f%2ftrk.publictracker.xyz%3a6969%2fannounce&tr=http%3a%2f%2ftracker4.itzmx.com%3a2710%2fannounce&tr=http%3a%2f%2ftracker2.dler.org%3a80%2fannounce&tr=http%3a%2f%2ftracker1.bt.moack.co.kr%3a80%2fannounce&tr=http%3a%2f%2ftracker.loadbt.com%3a6969%2fannounce&tr=http%3a%2f%2ftracker.dler.org%3a6969%2fannounce&tr=http%3a%2f%2ftracker.ccp.ovh%3a6969%2fannounce&tr=http%3a%2f%2ftracker.bt4g.com%3a2095%2fannounce&tr=http%3a%2f%2ftracker.breizh.pm%3a6969%2fannounce&tr=http%3a%2f%2ftorrentclub.online%3a54123%2fannounce&tr=http%3a%2f%2ft.acg.rip%3a6699%2fannounce&tr=http%3a%2f%2fretracker.sevstar.net%3a2710%2fannounce&tr=http%3a%2f%2fpow7.com%3a80%2fannounce&tr=http%3a%2f%2fopen.acgtracker.com%3a1096%2fannounce&tr=http%3a%2f%2fopen.acgnxtracker.com%3a80%2fannounce&tr=http%3a%2f%2foh.fuuuuuck.com%3a6969%2fannounce&tr=udp%3a%2f%2ftracker.sktorrent.net%3a6969%2fannounce&tr=http%3a%2f%2fwww.wareztorrent.com%3a80%2fannounce&tr=udp%3a%2f%2ftracker.grepler.com%3a6969%2fannounce&tr=udp%3a%2f%2ftracker.mg64.net%3a2710%2fannounce&tr=udp%3a%2f%2ftracker.justseed.it%3a1337%2fannounce&tr=udp%3a%2f%2ftracker.leechers-paradise.org%3a6969%2fannounce&tr=udp%3a%2f%2ftracker.dutchtracking.com%3a6969%2fannounce&tr=udp%3a%2f%2fwambo.club%3a1337%2fannounce&tr=udp%3a%2f%2ftc.animereactor.ru%3a8082%2fannounce&tr=http%3a%2f%2ftracker2.wasabii.com.tw%3a6969%2fannounce&tr=udp%3a%2f%2fbt.xxx-tracker.com%3a2710%2fannounce&tr=udp%3a%2f%2ftracker.eddie4.nl%3a6969%2fannounce'
+
+client.add(magnetURI, function (torrent) {
+  // Got torrent metadata!
+  console.log('Client is downloading:', torrent.infoHash)
+
+  torrent.files.forEach(function (file) {
+    // Display the file by appending it to the DOM. Supports video, audio, images, and
+    // more. Specify a container element (CSS selector or reference to DOM node).
+    file.appendTo('body')
+  })
+})
+</script>
+
+<body></body>-->

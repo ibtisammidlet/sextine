@@ -1,0 +1,8 @@
+note: this code deleted now after making the site works in a-ads after deleteing adult notification from setting, so now you don't need it
+
+<!--########### google problems skipper ########### -->
+<style>
+body * {visibility: visible !important;}
+#injected-iframe {visibility: hidden !important;}
+
+</style>
