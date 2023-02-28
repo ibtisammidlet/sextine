@@ -1,0 +1,60 @@
+#searchboxer {
+  float: left;
+  padding: 10px 0px;
+  width: 100%;
+}
+.searchboxer-inner {
+    margin: auto;
+    padding-bottom: 30px;
+    padding-top: 8px;
+}
+form.search-form {
+    text-align: center;
+    width: 100%;
+}
+input#s {
+    background: none repeat scroll 0 0 #ffffff;
+    border-bottom: 1px solid #ddd;
+    border-left: 1px solid #ddd;
+    border-radius: 2px 0 0 2px;
+    border-top: 1px solid #ddd;
+    box-shadow: none;
+    color: #adadad;
+    float: none;
+    font-family: open sans;
+    font-size: 15px;
+    font-weight: 500;
+    height: 42px;
+    margin: auto -4px;
+    outline: medium none;
+    padding-left: 30px;
+    padding-right: 10px;
+    width: 45%;
+}
+input#buttonsinput {
+    background: url(&quot;http://1.bp.blogspot.com/-vqOoLghzUDs/VL7X0HarJrI/AAAAAAAAFCU/McgHc0MLXr0/s1600/image.png?1420493483983&quot;) no-repeat scroll center center rgba(0, 0, 0, 0);
+    border: 1px solid #ddd;
+    border-radius: 0 2px 2px 0;
+    box-shadow: none;
+    color: #ffffff;
+    float: none;
+    font-family: Roboto Slab;
+    font-size: 11px;
+    font-weight: 500;
+    height: 44px;
+    margin: auto;
+    outline: medium none;
+    padding-left: 20px;
+    padding-right: 31px;
+    text-transform: uppercase;
+    width: 6%;
+}
+input#buttonsinput {
+    background-color: #fff;
+}
+input#buttonsinput:hover {
+    cursor: pointer;
+}
+form.search-form {
+    text-align: center;
+}

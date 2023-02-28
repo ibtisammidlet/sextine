@@ -1,0 +1,143 @@
+#content {
+    width: 70%;
+}
+.blog-posts.hfeed {
+	display: grid;
+	grid-template-columns: auto !important;
+}
+ol, ul{
+padding: unset !important;
+margin: unset !important;
+}
+.post {
+    padding: unset !important;
+}
+
+
+@media screen and (max-width: 1200px){/** works to 1000px **/
+.post-title.entry-title {
+    font-size: 21px !important;
+}
+.inner {
+    grid-template-columns: 25% 25% 25% 25%;
+}
+}
+
+@media screen and (max-width: 800px){/** works to px 640px**/
+.main-wrapper { width: 65%; margin-right: 370px; }
+
+.post-title.entry-title {
+    font-size: 16px !important;
+}
+.post-title {
+padding: unset !important;
+}
+.sidebar .widget {
+    padding: 15px 15px !important;
+}
+.PopularPosts .item-title {
+    font-size: 10px !important;
+}
+
+#content {
+    width: 154% !important;
+}
+.sidebar {
+    width: 100%  !important;
+    float: right !important;
+}
+
+}
+@media screen and (max-width: 730px){/** works to px 575px**/
+.post-title.entry-title {
+    font-size: 12px !important;
+}
+.post-header * {
+    font-size: 10px !important;
+}
+.header-wrap {
+padding: 5px 10px !important;
+}
+.post-header {
+    padding: unset !important;
+    margin: unset !important;
+}
+#comments {
+    margin-top: unset !important;
+}
+.comments h4 {
+    font-size: 15px !important;
+    margin: unset !important;
+}
+#blog-pager {
+    font-size: 10px !important;
+}
+#blog-pager {
+    padding: unset !important;
+}
+.sidebar h2 {
+    font-size: 12px !important;
+}
+}
+@media screen and (max-width: 1058px){
+.comments .comment-block {
+    margin-top: 10px;
+}
+}
+
+@media screen and (max-width: 575px){/** works to px 345px**/
+.comment-block * {
+    font-size: 10px !important;
+}
+.comments .comment-block {
+    margin: 6px 0px 0px 10px !important;
+	padding: 5px 5px 5px 10px !important;
+}
+
+.sidebar h2 {
+    font-size: 15px !important;
+}
+.sidebar .widget {
+    padding: 0px 6px !important;
+}
+.PopularPosts ul li {
+    margin-bottom: unset !important;
+}
+}
+
+@media screen and (max-width: 345px){/** works to px 300px**/
+#blog-pager {
+    padding: 6px 0px 0px 0px !important;
+}
+#blog-pager {
+    padding-bottom: 2% !important;
+}
+#search_form select {
+    margin: 0.8% 0%;
+}
+#SearchSubmit {
+    margin: 0% 0% 1.5% 0%;
+}
+.title {
+    font-size: 15px !important;
+}
+body {
+    line-height: unset !important;
+}
+nav#nav-main {
+    margin-top: unset !important;
+    padding: unset !important;
+}
+#header {
+    height: unset !important;
+}
+#searchboxer {
+    padding-bottom: unset !important;
+}
+.footer-credits p {
+    font-size: 12px;
+}
+nav#nav-main a {
+    padding: 10px 0px !important;
+}
+}

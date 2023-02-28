@@ -1,0 +1,44 @@
+.showpageOf {
+display: none;
+}
+.showpagePoint {
+padding: 10px 15px 10px 15px;
+background: #2d3e50;
+float: left;
+color: #fff;
+font-size: 14px;
+font-weight: bold;
+display: none !important;
+}
+.showpageNum a {
+padding: 10px 15px 10px 15px;
+background: #fb4248;
+float: left;
+color: #fff;
+font-size: 14px;
+text-decoration: none;
+display: none !important;
+}
+.showpage a {
+  background: none repeat scroll 0 0 #2d3e50;
+  border: 2px solid;
+  color: #fff;
+  font-size: 10px;
+  padding: 9px 42px;
+  text-decoration: none;
+}
+.showpage a:hover {
+    background: none repeat scroll 0 0 #2d3e50;
+}
+.showpageNum a:hover {
+background: #2d3e50;
+}
+.showpageArea {
+    float: left;
+    padding: 15px 0;
+    width: 100%;
+}
+
+#blog-pager-older-link a, #blog-pager-newer-link a, a.home-link, .showpageNum a, .showpage a {
+	color: rgb(234,0,55);
+}

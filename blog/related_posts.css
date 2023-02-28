@@ -1,0 +1,108 @@
+._140414_related_posts {
+    clear: both;
+}
+._140414_related_posts .clear {
+    display: block;
+    clear: both;
+    float: none;
+}
+._140414_related_posts .item {
+    float: left;
+margin: 3px;
+}
+._140414_related_posts .item-0 {
+    margin-left: 0!important;
+}
+._140414_related_posts.theme-3 .item {
+    width: 32%;
+    margin: 0 0 0 2%;
+}
+._140414_related_posts.theme-4 .item {
+    width: 23.5%;
+    margin: 0 0 0 2%;
+}
+._140414_related_posts.theme-5 .item {
+    width: 18.4%;
+    margin: 0 0 0 2%;
+}
+._140414_related_posts a.item-thumbnail {
+    display: block;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: /*thumbnail-height-s*/100px;/*thumbnail-height-e*/
+     opacity: 1;
+    -webkit-transform: scale(1,1);
+    -webkit-transition-timing-function: ease-out;
+    -webkit-transition-duration: 250ms;
+    -moz-transform: scale(1,1);
+    -moz-transition-timing-function: ease-out;
+    -moz-transition-duration: 250ms;
+}
+._140414_related_posts a.item-thumbnail:hover {
+    opacity: .7;
+    -webkit-transform: scale(1.05,1.07);
+    -webkit-transition-timing-function: ease-out;
+    -webkit-transition-duration: 250ms;
+    -moz-transform: scale(1.05,1.07);
+    -moz-transition-timing-function: ease-out;
+    -moz-transition-duration: 250ms;
+}
+._140414_related_posts a.item-thumbnail img {
+    min-width: 100%;
+    min-height: 100%;
+    position: relative;
+    height: auto;
+    width: auto;
+    max-width: none;
+    max-height: none;
+}
+._140414_related_posts h2.title {
+    display: block!important;
+}
+._140414_related_posts h3.title {
+    margin: 5px 0;
+    display: block;
+	line-height: 17px;
+}
+._140414_related_posts .meta a {
+    color: #888;
+    font-size: 10px;
+    margin: 0 7px 0 0;
+}
+._140414_related_posts div.labels a {
+    display: block;
+    float: left;
+    padding: 3px;
+    background: #888;
+color: rgb(234,0,55);
+    margin: 0 5px 5px 0;
+    font-size: 10px;
+line-height: 8px;
+}
+._140414_related_posts div.labels a:hover {
+    background: #fff;
+}
+.inner {
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+}
+._140414_related_posts.theme-25 .inner .item .title a {
+    font-size: 14px;
+line-height: 1px;
+}
+._140414_related_posts.theme-25 .inner .item .meta * {
+    color: #fff;
+}
+._140414_related_posts.theme-25 .inner .item .meta {
+    margin-top: -10px;
+}
+._140414_related_posts.theme-25 .inner .item .labels * {
+    background: #fff;
+}
+._140414_related_posts.theme-25 .inner .item .snippet {
+    display: none;
+}
+._140414_related_posts.theme-25 .inner .item .title a:hover {
+    color: #fff;
+}

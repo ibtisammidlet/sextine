@@ -1,0 +1,102 @@
+#content {
+    width: 76%;
+}
+.main-wrapper {  margin-right: 370px; }
+.sidebar-wrapper { width: 33%; float: right; }
+.entry-cntnt .overlay .entry-content {
+display:none;
+}
+
+.sidebar-wrapper{display:none;}
+
+  .post-title{display:none;}
+
+.entry-cntnt {
+  border-radius: 5px;
+  height: auto;
+  padding: 0 0 9%;
+  position: relative;
+  text-align: center;
+}
+
+.main-wrapper{margin:0;}
+
+/** default responsive code **/
+
+.post {
+    float: left;
+    padding: 0;
+}
+.post-body img, .post-body video {
+    width: 100%;
+}
+/** End **/
+@media screen and (max-width: 670px){
+#searchterms {
+    width: 53px;
+}
+.postags {
+    top: -11px;
+    left: 1px;
+}
+.postags a {
+    font-size: 7px;
+    padding: 0px 1px;
+}
+.entry-likes, .entry-category {
+    font-size: 9px;
+}
+.blog-posts.hfeed {
+    grid-template-columns: 37% 37% 37% 37% !important;
+}
+#content {
+    width: 66% !important;
+}
+}
+@media screen and (max-width: 600px){
+#select1 {
+    width: 32%;
+}
+
+
+}
+
+@media screen and (max-width: 460px){
+
+#select1 {
+    width: 48%;
+}
+#header h1 {
+    font-size: 15px !important;
+	line-height: 12px !important;
+}
+.ct-wrapper {
+    height: 45px;
+}
+}
+
+@media screen and (max-width: 360px){
+#searchterms {
+    width: 75% !important;
+}
+.blog-posts.hfeed {
+    grid-template-columns: 49% 49% 49% !important;
+}
+#content {
+    width: 66% !important;
+}
+}
+}
+@media screen and (max-width: 320px){
+
+
+#searchboxer {
+    margin-top: 30px !important;
+}
+}
+
+@media screen and (max-width: 300px){/** works to 216px **/
+#select1 {
+    width: 98%;
+}
+}

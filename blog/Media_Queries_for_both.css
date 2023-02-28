@@ -1,0 +1,58 @@
+@media screen and (max-width: 765px){
+#SearchSubmit, #searchterms, #select1 {
+font-size: 26px !important;
+margin: 4px 0px !important;
+
+}
+
+nav#nav-main {
+font-size: 21px !important;
+margin: 7px 0px !important;
+
+}
+.ct-wrapper {
+height: 60px !important;
+}
+
+#header-inner {
+margin: 12px 0px !important;
+}
+
+#blog-pager {
+font-size: 21px !important;
+padding: 20px !important;
+
+}
+
+.footer-credits {
+    bottom: 0;
+}
+
+}
+
+@media screen and (max-width: 685px){
+#search_form {
+    margin: 0px 2% !important;
+}
+}
+@media screen and (max-width: 315px){
+.footer-credits p {
+    font-size: 11px;
+}
+}
+@media screen and (max-width: 320px){
+.title {
+    font-size: 12px !important;
+}
+
+nav#nav-main a {
+    padding: 7px &#8203;1px !important;
+}
+}
+
+
+@media screen and (max-width: 460px){
+.footer-credits{
+padding: unset !important;
+}
+}
