@@ -7,16 +7,16 @@
 <link href='//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css' rel='stylesheet'/>
 
 <script src="https://cdn.jsdelivr.net/gh/jquery/jquery@3.6.0/dist/jquery.min.js"></script>
-<script src="related_posts.js"></script>
-<link rel="stylesheet" href="related_posts.css" />
-<link rel="stylesheet" href="skin.css" />
-<link rel="stylesheet" href="Pagination.css" />
-<link rel="stylesheet" href="Media_Queries_for_both.css" />
-<link rel="stylesheet" href="Top_Responsive_Menu.css" />
-<link rel="stylesheet" href="Top_Search_Box.css" />
-<script src="conf.js"></script>
-<script src="jquery_scripin.custom.js"></script>
-<script src="ads.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/ibtisammidlet/sextine@main/blog/related_posts.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ibtisammidlet/sextine@main/blog/related_posts.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ibtisammidlet/sextine@main/blog/skin.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ibtisammidlet/sextine@main/blog/Pagination.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ibtisammidlet/sextine@main/blog/Media_Queries_for_both.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ibtisammidlet/sextine@main/blog/Top_Responsive_Menu.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ibtisammidlet/sextine@main/blog/Top_Search_Box.css" />
+<script src="https://cdn.jsdelivr.net/gh/ibtisammidlet/sextine@main/blog/conf.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/ibtisammidlet/sextine@main/blog/jquery_scripin.custom.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/ibtisammidlet/sextine@main/blog/ads.js"></script>
 
 
 
@@ -101,13 +101,13 @@
 //          Media Queries for index    //     
 ///////////////////////////////////////////-->
 <b:if cond='data:blog.pageType == &quot;index&quot;'>
-<link rel="stylesheet" href="Media_Queries_for_index.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ibtisammidlet/sextine@main/blog/Media_Queries_for_index.css" />
 </b:if>
 <!--///////////////////////////////////////////
 //          Media Queries for Post Pages    //     
 ///////////////////////////////////////////-->
 <b:if cond='data:blog.pageType != &quot;index&quot;'>
-<link rel="stylesheet" href="Media_Queries_for_Post_Pages.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ibtisammidlet/sextine@main/blog/Media_Queries_for_Post_Pages.css" />
 </b:if>
 
 
@@ -120,12 +120,12 @@
 
 <b:if cond='data:blog.pageType == &quot;static_page&quot;'>
 <style type='text/css'>
-<link rel="stylesheet" href="static_page.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ibtisammidlet/sextine@main/blog/static_page.css" />
 </style>
 </b:if>
 
 <b:if cond='data:blog.pageType == &quot;item&quot;'>
-<script src="next_post_navigation_links.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/ibtisammidlet/sextine@main/blog/next_post_navigation_links.js"></script>
 </b:if>
 
 </head>
@@ -2103,7 +2103,7 @@ src=&quot;https:&gt;&lt;/a&gt;&lt;/div&gt;&lt;/noscript&gt;
             </div><!-- /outer-wrapper -->
             </div><!-- /ct-wrapper -->
  
-<script src="jquery.lazyload-any.custom.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/ibtisammidlet/sextine@main/blog/jquery.lazyload-any.custom.js"></script>
 
 <!-- older postes button -->
 <b:if cond='data:blog.pageType == &quot;index&quot;'>
@@ -2149,11 +2149,11 @@ $( "body" ).append('<style>#blog-pager {margin-top: 180px !important;}</style>')
 
 <div class='footer-credits'>
 <p> 
-Made With &#9829; By <a href='http://www.sextine.com/' id='mycontent' rel='dofollow' title='cute and hardcore mobile sex videos'>imin</a>
+Made With &#9829; By <a href='http://www.sextine.com/' id='mycontent' rel='dofollow' title='cute and hardcore mobile sex videos'>elena final fail</a>
 </p> 
 </div><!-- footer-credits -->
 
 <b:include data='blog' name='google-analytics'/>
-<script src="injectposternow.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/ibtisammidlet/sextine@main/blog/injectposternow.js"></script>
 </body>
 </html>
