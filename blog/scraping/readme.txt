@@ -1,0 +1,1 @@
+this is example of how files on server should be.
