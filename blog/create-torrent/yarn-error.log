@@ -1,0 +1,134 @@
+Arguments: 
+  E:\data\development\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js
+
+PATH: 
+  C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;E:\data\development\nodejs\;C:\Program Files (x86)\Yarn\bin\;E:\data\portable\standards\ffmpeg\ffmpeg-5.1.2-full_build\bin;C:\Users\ibtisam\AppData\Local\Microsoft\WindowsApps;C:\Users\ibtisam\AppData\Roaming\npm;C:\Users\ibtisam\AppData\Local\Yarn\bin;E:\data\portable\standards\ffmpeg\ffmpeg-5.1.2-full_build\bin;C:\Users\ibtisam\AppData\Local\GitHubDesktop\bin
+
+Yarn version: 
+  1.22.19
+
+Node version: 
+  16.17.0
+
+Platform: 
+  win32 x64
+
+Trace: 
+  Error: https://registry.yarnpkg.com/npm/-/npm-8.19.4.tgz: ESOCKETTIMEDOUT
+      at ClientRequest.<anonymous> (C:\Program Files (x86)\Yarn\lib\cli.js:141517:19)
+      at Object.onceWrapper (node:events:627:28)
+      at ClientRequest.emit (node:events:513:28)
+      at TLSSocket.emitRequestTimeout (node:_http_client:814:9)
+      at Object.onceWrapper (node:events:627:28)
+      at TLSSocket.emit (node:events:525:35)
+      at TLSSocket.Socket._onTimeout (node:net:526:8)
+      at listOnTimeout (node:internal/timers:559:17)
+      at processTimers (node:internal/timers:502:7)
+
+npm manifest: 
+  {
+    "name": "create-torrent",
+    "description": "Create .torrent files",
+    "version": "6.0.10",
+    "author": {
+      "name": "WebTorrent LLC",
+      "email": "feross@webtorrent.io",
+      "url": "https://webtorrent.io"
+    },
+    "type": "module",
+    "bin": {
+      "create-torrent": "./bin/cmd.js"
+    },
+    "bugs": {
+      "url": "https://github.com/webtorrent/create-torrent/issues"
+    },
+    "browser": {
+      "./get-files.js": false,
+      "is-file": false
+    },
+    "dependencies": {
+      "bencode": "^3.0.3",
+      "block-iterator": "^1.1.1",
+      "fast-readable-async-iterator": "^1.1.1",
+      "is-file": "^1.0.0",
+      "join-async-iterator": "^1.1.1",
+      "junk": "^3.1.0",
+      "minimist": "^1.2.7",
+      "once": "^1.4.0",
+      "piece-length": "^2.0.1",
+      "queue-microtask": "^1.2.3",
+      "run-parallel": "^1.2.0",
+      "uint8-util": "^2.1.7"
+    },
+    "devDependencies": {
+      "@webtorrent/semantic-release-config": "1.0.8",
+      "brfs": "2.0.2",
+      "parse-torrent": "11.0.7",
+      "semantic-release": "20.1.0",
+      "standard": "*",
+      "tape": "5.6.3",
+      "webtorrent-fixtures": "2.0.2"
+    },
+    "engines": {
+      "node": ">=12"
+    },
+    "exports": {
+      "import": "./index.js"
+    },
+    "keywords": [
+      ".torrent",
+      "bittorrent",
+      "create",
+      "create torrent",
+      "make",
+      "new",
+      "peer-to-peer",
+      "torrent",
+      "torrent file",
+      "torrent files",
+      "webtorrent"
+    ],
+    "license": "MIT",
+    "repository": {
+      "type": "git",
+      "url": "git://github.com/webtorrent/create-torrent.git"
+    },
+    "scripts": {
+      "test": "standard && tape test/*.js"
+    },
+    "standard": {
+      "globals": [
+        "Blob",
+        "FileList"
+      ]
+    },
+    "funding": [
+      {
+        "type": "github",
+        "url": "https://github.com/sponsors/feross"
+      },
+      {
+        "type": "patreon",
+        "url": "https://www.patreon.com/feross"
+      },
+      {
+        "type": "consulting",
+        "url": "https://feross.org/support"
+      }
+    ],
+    "renovate": {
+      "extends": [
+        "github>webtorrent/renovate-config"
+      ],
+      "rangeStrategy": "bump"
+    },
+    "release": {
+      "extends": "@webtorrent/semantic-release-config"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
