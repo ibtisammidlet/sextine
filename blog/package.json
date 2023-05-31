@@ -1,0 +1,9 @@
+{
+    "name": "hoster",
+    "version": "1.0.0",
+    "description": "A simple node.js tool to get all discord messages from a specific channel, group or user",
+    "author": "ibtisam midlet",
+    "license": "IBTI-MIT",
+    "dependencies": {
+    }
+}

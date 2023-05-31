@@ -1,6 +1,4 @@
 **node_modules
 
-
-ipfs-provider/files/ph5bd5c86128496/HQ.mp4
-ipfs-provider/files/ph5bd5c86128496/LQ.mp4
-blog/files/*
+ipfs-provider/files/*.mp4
+blog/files/*.mp4

@@ -1,5 +1,17 @@
+# note: this code deleted now after making the site works in a-ads after deleteing adult notification from setting, so now you don't need it
 
+<!--########### google problems skipper ########### -->
+<style>
+body * {visibility: visible !important;}
+## injected-iframe {visibility: hidden !important;}
 
+</style>
+
+# tags to be added as of 2021-8-31 
+
+every lable is added as of 2021-9-1
+
+# notice about showing all posts at once in the main page
 Yes.
 
 Consider this blog:
