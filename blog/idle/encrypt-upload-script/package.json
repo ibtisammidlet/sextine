@@ -1,0 +1,12 @@
+{
+  "name": "encrypt-upload-script",
+  "version": "1.0.0",
+  "description": "Node.js script to encrypt files and upload them to Firebase Storage",
+  "main": "index.js",
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {
+    "firebase-admin": "^10.0.1",
+    "simple-crypto-js": "^2.1.0"
+  }
+}
