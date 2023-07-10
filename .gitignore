@@ -1,4 +1,5 @@
 **node_modules
 
 ipfs-provider/files/*.mp4
-blog/files/*.mp4
+files/*.mp4
+files/*/*.mp4
